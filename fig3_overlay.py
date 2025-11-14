@@ -23,7 +23,7 @@ def plot_fig3():
 
     plt.xlabel("Date")
     plt.ylabel("Price")
-    plt.title("All Companies: Stock Price Overlay (Estee = 2021–2025)")
+    plt.title("All Companies: Stock Price Overlay")
     plt.legend(title="Company", loc="upper left")
     plt.grid(True)
     plt.tight_layout()

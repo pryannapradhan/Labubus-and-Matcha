@@ -50,7 +50,7 @@ def plot_individual_figs():
     # plot car sales
     plt.figure(figsize=(10,5))
     plt.plot(df_cars["Date"], df_cars["Price"], color="black")
-    plt.title("Car Sales Over Time")
+    plt.title("Car Sales (2021-2025)")
     plt.xlabel("Date"); plt.ylabel("Sales")
     plt.grid(True)
     plt.tight_layout()
