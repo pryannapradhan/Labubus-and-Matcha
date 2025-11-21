@@ -83,10 +83,15 @@ def ld_cln_data():
         (df_estee['Date'] <= '2025-10-01')
     ]
 
-    df_estee_95_03 = df_estee[
-        (df_estee['Date'] >= '1995-01-01') &
-        (df_estee['Date'] <= '2003-12-31')
+    df_estee_97_01 = df_estee[
+        (df_estee['Date'] >= '1997-01-01') &
+        (df_estee['Date'] <= '2001-12-31')
     ]
+
+    df_unemployment_21_25 = df_unemployment[
+        (df_unemployment['Date'] >= '2021-01-01') &
+        (df_unemployment['Date'] <= '2025-12-31')
+        ]
 
     # return dictionary
     return {
@@ -107,5 +112,6 @@ def ld_cln_data():
         "unemployment": df_unemployment,
 
         "estee_21_25": df_estee_21_25,
-        "estee_95_03": df_estee_95_03
+        "estee_97_01": df_estee_97_01,
+        "unemployment_21_25": df_unemployment_21_25
     }

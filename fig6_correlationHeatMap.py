@@ -56,8 +56,10 @@ def plot_correlation_heatmap():
 
     # Plot heatmap
     plt.figure(figsize=(14, 12))
-    sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap='coolwarm', linewidths=0.5)
-    plt.title("Correlation Matrix HeatMap for Stock History and Economic Indicators", fontsize=18)
+    sns.heatmap(corr_matrix, annot=True, fmt=".2f",
+                cmap='coolwarm', linewidths=0.5)
+    plt.title("Correlation Matrix HeatMap for Stock History and Economic Indicators",
+              fontsize=18)
     plt.xticks(rotation=45)
     plt.yticks(rotation=0)
     plt.tight_layout()
