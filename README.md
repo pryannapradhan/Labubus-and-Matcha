@@ -34,13 +34,13 @@ Labubus-and-Matcha/
 └── README.md  
 
 ## Economic Indicators
-<u>CarSales.csv</u>
+`CarSales.csv`
 
-<u>CPIData.csv</u>  
+`CPIData.csv `
 
-<u>GDPData.csv</u>  
+`GDPData.csv  `
 
-<u>UnemploymentData.csv</u>  
+`UnemploymentData.csv`  
 
 
 ## Stock History Data
@@ -48,58 +48,78 @@ Labubus-and-Matcha/
 The _cleaned version is created using the `clean_stock_csv(file_path)` function in `data_cleaning.py`.
 It reformats the CSV files to a standardized structure for easier analysis.
 
-<u>DollarTreeStock.csv</u> 
+`DollarTreeStock.csv `
+- add explanation  
 
-<u>DreamsIncorporatedStock.csv</u>  
+`DreamsIncorporatedStock.csv ` 
+- add explanation  
 
-<u>EsteeLauderStock.csv</u>   
+`EsteeLauderStock.csv  ` 
+- add explanation  
 
-<u>PopMartStock.csv</u>   
+`PopMartStock.csv ` 
+- add explanation  
 
-<u>PVHStock.csv</u>   
+`PVHStock.csv `  
+- add explanation  
 
-<u>StarbucksStock.csv</u>   
+`StarbucksStock.csv`   
+- add explanation  
 
-<u>TargetStock.csv</u>   
+`TargetStock.csv `  
+- add explanation  
 
-<u>TJXStock.csv</u>   
+`TJXStock.csv `  
+- add explanation  
 
-<u>UltaStock.csv</u>  
+`UltaStock.csv ` 
+- add explanation  
 
-<u>WalmartStock.csv</u>   
+`WalmartStock.csv `  
+- add explanation  
 
 ## Figures
-<u>fig1_allStockPrice.py</u>  
+`fig1_allStockPrice.py ` 
+- add explanation  
 
-<u>fig2_estee.py</u>  
+`fig2_estee.py`  
+- add explanation  
 
-<u>fig3_overlay.py</u>  
+`fig3_overlay.py`  
+- add explanation  
 
-<u>fig4_dream_pop.py</u>  
+`fig4_dream_pop.py ` 
+- add explanation  
 
-<u>fig5_individual.py</u>  
+`fig5_individual.py ` 
+- add explanation  
 
-<u>fig6_correlationHeatMap.py</u>  
+`fig6_correlationHeatMap.py`  
+- add explanation  
 
-<u>fig7_smallLuxuryBigPurchase.py</u>  
+`fig7_smallLuxuryBigPurchase.py ` 
+- add explanation  
 
-<u>fig8_smallLuxuryEconomicIndicators.py</u>  
+`fig8_smallLuxuryEconomicIndicators.py ` 
+- add explanation  
 
-<u>fig9_BudgetLuxury.py</u>  
+`fig9_BudgetLuxury.py  `
+- add explanation  
 
-<u>fig10_allStockPercentChange.py</u>
+`fig10_allStockPercentChange.py`
+- add explanation  
 
 
 
 ## Packages
-<u>pandas</u>   
+`pandas` 
 - **Import:** pandas as pd  
 - **Usage:** work with csv files and clean/manipulate data
 
-<u>matplotlib</u>  
+`matplotlib ` 
 - **Import:** matplotlib.pyplot as plt  
 - **Usage:** plotting graphs  
 
-<u>seaborn</u>  
+`seaborn `
 - **Import:** seaborn as sns  
 - **Usage:** heatmap
