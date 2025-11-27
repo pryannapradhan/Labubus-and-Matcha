@@ -20,7 +20,7 @@ def plot_fig8():
     ax2 = ax1.twinx()          # Secondary axis for unemployment rate
 
     # ---- STOCK PRICE LINES ----
-    ax1.plot(df_dreams['Date'], df_dreams['Close'],
+    ax1.plot(df_dreams['Date'], df_dreams['Price'],
              label="Dreams", color="purple")
     ax1.plot(df_pop['Date'], df_pop['Price'],
              label="PopMart", color="red")

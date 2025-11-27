@@ -22,10 +22,10 @@ def plot_fig1():
     axes[0, 0].plot(df_dollar['Date'], df_dollar['Price'], color="blue")
     axes[0, 0].set_title("Dollar Tree")
     # Plot Dreams
-    axes[0, 1].plot(df_dreams['Date'], df_dreams['Close'], color="purple")
+    axes[0, 1].plot(df_dreams['Date'], df_dreams['Price'], color="purple")
     axes[0, 1].set_title("Dreams Incorporated")
     # Plot Estee
-    axes[1, 0].plot(df_estee['Date'], df_estee['Close'], color="brown")
+    axes[1, 0].plot(df_estee['Date'], df_estee['Price'], color="brown")
     axes[1, 0].set_title("Estée Lauder")
     # Plot PopMart
     axes[1, 1].plot(df_pop['Date'], df_pop['Price'], color="red")

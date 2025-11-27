@@ -13,7 +13,7 @@ def plot_individual_figs():
 
     # plot dreams
     plt.figure(figsize=(10,5))
-    plt.plot(df_dreams["Date"], df_dreams["Close"], color="purple")
+    plt.plot(df_dreams["Date"], df_dreams["Price"], color="purple")
     plt.title("Dreams Incorporated (2021–2025)")
     plt.xlabel("Date"); plt.ylabel("Price")
     plt.grid(True)
@@ -58,7 +58,7 @@ def plot_individual_figs():
 
     # plot estee
     plt.figure(figsize=(10,5))
-    plt.plot(df_estee["Date"], df_estee["Close"], color="brown")
+    plt.plot(df_estee["Date"], df_estee["Price"], color="brown")
     plt.title("Estee Lauder (2021–2025)")
     plt.xlabel("Date"); plt.ylabel("Price")
     plt.grid(True)

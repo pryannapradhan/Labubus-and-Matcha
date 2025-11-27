@@ -18,14 +18,14 @@ def plot_fig7():
 
     plt.figure(figsize=(14, 7))
 
-    plt.plot(df_dreams['Date'], df_dreams['Close'], label='Dreams Inc.', color="purple")
+    plt.plot(df_dreams['Date'], df_dreams['Price'], label='Dreams Inc.', color="purple")
     plt.plot(df_pop['Date'], df_pop['Price'], label='PopMart', color="red")
     plt.plot(df_starbucks['Date'], df_starbucks['Price'], label='Starbucks', color="green")
     plt.plot(df_ulta['Date'], df_ulta['Price'], label='Ulta Beauty', color="orange")
     plt.plot(df_cars['Date'], df_cars['TotalSales'], label='Car Sales', color="black")
 
     # shifted estee
-    plt.plot(df_estee_shifted['Date'], df_estee_shifted['Close'],
+    plt.plot(df_estee_shifted['Date'], df_estee_shifted['Price'],
              label='Estee Lauder (97–01 shifted)', color="brown", linestyle='dashed')
 
     plt.xlabel("Date")
@@ -38,11 +38,11 @@ def plot_fig7():
 
     # plot just estee
     plt.figure(figsize=(10, 5))
-    plt.plot(df_estee_97_01['Date'], df_estee_97_01['Close'], color="brown")
+    plt.plot(df_estee_97_01['Date'], df_estee_97_01['Price'], color="brown")
 
     plt.title("Estee Lauder Stock Price (1997–2001)")
     plt.xlabel("Date")
-    plt.ylabel("Close Price")
+    plt.ylabel("Price")
     plt.grid(True)
     plt.tight_layout()
     plt.show()

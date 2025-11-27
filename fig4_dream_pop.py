@@ -9,7 +9,7 @@ def plot_fig4():
 
     fig, ax1 = plt.subplots(figsize=(14, 6))
 
-    ax1.plot(df_dreams['Date'], df_dreams['Close'], color='purple', label='Dreams Inc.')
+    ax1.plot(df_dreams['Date'], df_dreams['Price'], color='purple', label='Dreams Inc.')
     ax1.set_ylabel("Dreams Inc.", color='purple')
     ax1.tick_params(axis='y', labelcolor='purple')
 
