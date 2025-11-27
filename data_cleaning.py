@@ -20,7 +20,12 @@ def clean_stock_csv(file_path):
     df['Price'] = pd.to_numeric(df['Price'], errors='coerce')
 
     # Calculate Change % if missing
-    if 'Change %' not in df.columns:
+    if 'Change %' in df.columns:
+        # Remove % sign and convert to float
+        df['Change %'] = df['Change %'].str.replace('%', '', regex=False)
+        df['Change %'] = pd.to_numeric(df['Change %'], errors='coerce')
+    else:
+        # Calculate Change % if missing
         df['Change %'] = df['Price'].pct_change() * 100
         df['Change %'] = df['Change %'].round(2)
 
@@ -38,7 +43,7 @@ def ld_cln_data():
     # Load and clean stock CSVs
     df_dollar = clean_stock_csv('StockHistoryData/DollarTreeStock.csv')
     df_dreams = clean_stock_csv('StockHistoryData/DreamsIncorporatedStock.csv')
-    df_estee = clean_stock_csv('StockHistoryData/EsteeLauderStock.csv')
+    df_estee = clean_stock_csv('StockHistoryData/EsteeLauderStock.csv').resample('MS', on='Date').first().reset_index()
     df_pop = clean_stock_csv('StockHistoryData/PopMartStock.csv')
     df_pvh = clean_stock_csv('StockHistoryData/PVHStock.csv')
     df_starbucks = clean_stock_csv('StockHistoryData/StarbucksStock.csv')
