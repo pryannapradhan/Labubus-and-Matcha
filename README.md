@@ -49,10 +49,10 @@ The _cleaned version is created using the `clean_stock_csv(file_path)` function 
 It reformats the CSV files to a standardized structure for easier analysis.
 
 `DollarTreeStock.csv `
-- add explanation  
+- Dollar Tree Stock Data (1/1/21 - 11/1/25)
 
 `DreamsIncorporatedStock.csv ` 
-- add explanation  
+- Dreams Incorporated (owner of Labubus) Stock Data (1/1/21-11/1/25) 
 
 `EsteeLauderStock.csv  ` 
 - add explanation  
