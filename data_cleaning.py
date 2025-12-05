@@ -41,16 +41,16 @@ def clean_stock_csv(file_path):
 
 def ld_cln_data():
     # Load and clean stock CSVs
-    df_dollar = clean_stock_csv('StockHistoryData/DollarTreeStock.csv')
-    df_dreams = clean_stock_csv('StockHistoryData/DreamsIncorporatedStock.csv')
-    df_estee = clean_stock_csv('StockHistoryData/EsteeLauderStock.csv').resample('MS', on='Date').first().reset_index()
-    df_pop = clean_stock_csv('StockHistoryData/PopMartStock.csv')
-    df_pvh = clean_stock_csv('StockHistoryData/PVHStock.csv')
-    df_starbucks = clean_stock_csv('StockHistoryData/StarbucksStock.csv')
-    df_target = clean_stock_csv('StockHistoryData/TargetStock.csv')
-    df_tjx = clean_stock_csv('StockHistoryData/TJXStock.csv')
-    df_ulta = clean_stock_csv('StockHistoryData/UltaStock.csv')
-    df_walmart = clean_stock_csv('StockHistoryData/WalmartStock.csv')
+    df_dollar = clean_stock_csv('StockHistoryData/CompanyComparison/DollarTreeStock.csv')
+    df_dreams = clean_stock_csv('StockHistoryData/ItemComparison/DreamsIncorporatedStock.csv')
+    df_estee = clean_stock_csv('StockHistoryData/ItemComparison/EsteeLauderStock.csv').resample('MS', on='Date').first().reset_index()
+    df_pop = clean_stock_csv('StockHistoryData/ItemComparison/PopMartStock.csv')
+    df_pvh = clean_stock_csv('StockHistoryData/CompanyComparison/PVHStock.csv')
+    df_starbucks = clean_stock_csv('StockHistoryData/ItemComparison/StarbucksStock.csv')
+    df_target = clean_stock_csv('StockHistoryData/CompanyComparison/TargetStock.csv')
+    df_tjx = clean_stock_csv('StockHistoryData/CompanyComparison/TJXStock.csv')
+    df_ulta = clean_stock_csv('StockHistoryData/ItemComparison/UltaStock.csv')
+    df_walmart = clean_stock_csv('StockHistoryData/CompanyComparison/WalmartStock.csv')
 
     df_dollar['Price'] = df_dollar['Price'].astype(float)
     df_dreams['Price'] = df_dreams['Price'].astype(float)
