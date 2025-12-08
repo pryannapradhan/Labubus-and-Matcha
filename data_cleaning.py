@@ -1,39 +1,37 @@
 import pandas as pd
 
 def clean_stock_csv(file_path):
-    df = pd.read_csv(file_path, dtype=str)
+    df = pd.read_csv(file_path, dtype=str) # read in csv file using pandas
 
     if 'date' in df.columns:
-        df.rename(columns={'date': 'Date'}, inplace=True)
+        df.rename(columns={'date': 'Date'}, inplace=True) # rename any columns 'date' -> 'Date'
 
-    # Standardize Date column to MM/DD/YYYY
     if 'Date' in df.columns:
-        df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+        df['Date'] = pd.to_datetime(df['Date']) # convert dates to format datetime
 
-    # Rename Close/close to Price
+    # if there is a Close column instead of price column, rename that to Price
     if 'Close' in df.columns:
         df.rename(columns={'Close': 'Price'}, inplace=True)
     elif 'close' in df.columns:
         df.rename(columns={'close': 'Price'}, inplace=True)
 
-    # Ensure Price column is numeric
-    df['Price'] = pd.to_numeric(df['Price'], errors='coerce')
+    # make sure the price is a numeric value
+    df['Price'] = pd.to_numeric(df['Price'])
 
-    # Calculate Change % if missing
+    # if the percent change is already calculate, make sure it is the right numeric format
     if 'Change %' in df.columns:
-        # Remove % sign and convert to float
         df['Change %'] = df['Change %'].str.replace('%', '', regex=False)
-        df['Change %'] = pd.to_numeric(df['Change %'], errors='coerce')
+        df['Change %'] = pd.to_numeric(df['Change %'])
+    # if the percent change isn't calculated, add that as a column
     else:
-        # Calculate Change % if missing
         df['Change %'] = df['Price'].pct_change() * 100
         df['Change %'] = df['Change %'].round(2)
 
-    # Reorder columns
+    # make sure columns are in a standard order
     columns_order = ['Date', 'Open', 'High', 'Low', 'Price', 'Vol.', 'Change %']
     df = df[[col for col in columns_order if col in df.columns]]
 
-    # Save cleaned version
+    # save the cleaned file version
     new_file = file_path.replace('.csv', '_cleaned.csv')
     df.to_csv(new_file, index=False, date_format='%m/%d/%Y', quotechar='"')
     print(f"Cleaned CSV saved to {new_file}")
@@ -70,17 +68,19 @@ def ld_cln_data():
     df_unemployment = pd.read_csv('EconomicIndicatorData/UnemploymentData.csv')
 
 
-
+    # convert all indicator columns (sales, CPI, etc.) to numeric values
     df_cars['TotalSales'] = df_cars['TOTALSA'].astype(float)
     df_cpi['CPI'] = df_cpi['CPIAUCSL'].astype(float)
     df_gdp['GDP'] = df_gdp['GDP'].astype(float)
     df_unemployment['UnemploymentRate'] = df_unemployment['UNRATE'].astype(float)
 
-    df_cars['Date'] = pd.to_datetime(df_cars['observation_date'], errors='coerce')
-    df_cpi['Date'] = pd.to_datetime(df_cpi['DATE'], errors='coerce')
-    df_gdp['Date'] = pd.to_datetime(df_gdp['DATE'], errors='coerce')
-    df_unemployment['Date'] = pd.to_datetime(df_unemployment['DATE'], errors='coerce')
+    # convert date columns to datetime
+    df_cars['Date'] = pd.to_datetime(df_cars['observation_date'])
+    df_cpi['Date'] = pd.to_datetime(df_cpi['DATE'])
+    df_gdp['Date'] = pd.to_datetime(df_gdp['DATE'])
+    df_unemployment['Date'] = pd.to_datetime(df_unemployment['DATE'])
 
+    # make sure all the datasets are sorted by the date
     dfs_to_sort = [
         df_dollar, df_dreams, df_estee, df_pop, df_pvh,
         df_starbucks, df_target, df_tjx, df_ulta, df_walmart,
@@ -90,17 +90,20 @@ def ld_cln_data():
     for df in dfs_to_sort:
         df.sort_values('Date', inplace=True)
 
-    # Create subsets
+    # Create subsets of the estee lauder data
     df_estee_21_25 = df_estee[
         (df_estee['Date'] >= '01/01/2021') & (df_estee['Date'] <= '10/01/2025')
     ]
     df_estee_97_01 = df_estee[
         (df_estee['Date'] >= '01/01/1997') & (df_estee['Date'] <= '12/31/2001')
     ]
+
+    # Create subset of the unemployment data
     df_unemployment_21_25 = df_unemployment[
         (df_unemployment['Date'] >= '01/01/2021') & (df_unemployment['Date'] <= '12/31/2025')
     ]
 
+    # return dictionary of cleaned datasets
     return {
         "dollar": df_dollar,
         "dreams": df_dreams,

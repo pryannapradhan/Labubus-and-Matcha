@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from data_cleaning import ld_cln_data
 
 def plot_fig9():
-    stock_data = ld_cln_data()
+    stock_data = ld_cln_data() # load cleaned data
 
     df_dollar = stock_data["dollar"]
     df_pvh = stock_data["pvh"]
@@ -10,6 +10,7 @@ def plot_fig9():
     df_walmart = stock_data["walmart"]
     df_target = stock_data["target"]
 
+    # plot stock prices for the company comparisons
     plt.figure(figsize=(14, 7))
 
     plt.plot(df_dollar['Date'], df_dollar['Price'], label='Dollar Tree', color="blue")
@@ -18,6 +19,7 @@ def plot_fig9():
     plt.plot(df_walmart['Date'], df_walmart['Price'], label='Walmart', color="orange")
     plt.plot(df_target['Date'], df_target['Price'], label='Target', color="purple")
 
+    # format the graphs
     plt.xlabel("Date")
     plt.ylabel("Price ($)")
     plt.title("Retail Company Stock Prices")

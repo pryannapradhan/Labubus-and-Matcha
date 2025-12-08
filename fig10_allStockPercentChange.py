@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from data_cleaning import ld_cln_data
 
 def plot_fig10():
-    stock_data = ld_cln_data()
+    stock_data = ld_cln_data() # load in cleaned data
 
     df_dollar = stock_data["dollar"]
     df_dreams = stock_data["dreams"]
@@ -15,6 +15,7 @@ def plot_fig10():
     df_ulta = stock_data["ulta"]
     df_walmart = stock_data["walmart"]
 
+    # plot the sock percent changes
     fig, axes = plt.subplots(5, 2, figsize=(14, 18))
     fig.suptitle("Stock Percent Change History (2021–2025)", fontsize=20)
 
@@ -49,7 +50,7 @@ def plot_fig10():
     axes[4, 1].plot(df_walmart['Date'], df_walmart['Change %'], color="black")
     axes[4, 1].set_title("Walmart")
 
-    # label axes
+    # format and display
     for ax in axes.flat:
         ax.set_xlabel("Date")
         ax.set_ylabel("Percent Change (%)")

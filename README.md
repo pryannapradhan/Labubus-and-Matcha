@@ -35,13 +35,20 @@ Labubus-and-Matcha/
 
 ## Economic Indicators
 `CarSales.csv`
+- Car Sale Data (1/1/21 - 8/1/25)
+- Add more info here
 
 `CPIData.csv `
+- CPI Data (1/1/1974 - 1/1/24)
+- Add more info here
 
 `GDPData.csv  `
+- GDP Data (1/1/1974 - 1/1/24)
+- Add more info here
 
 `UnemploymentData.csv`  
-
+- Unemployment Rate % (1/1/1974 - 1/1/24)
+- Add more info here
 
 ## Stock History Data
 **Note about _cleaned files:** Each of the 10 stock market CSV files has a corresponding _cleaned version.
@@ -50,33 +57,45 @@ It reformats the CSV files to a standardized structure for easier analysis.
 
 `DollarTreeStock.csv `
 - Dollar Tree Stock Data (1/1/21 - 11/1/25)
+- Dollar Tree is a discount store known too sell a variety of goods anywhere from everyday household goods to party supplie
+to even food. Although prices have since increased beyond $1, it remains a relatively inexpensive store.
 
 `DreamsIncorporatedStock.csv ` 
-- Dreams Incorporated (owner of Labubus) Stock Data (1/1/21-11/1/25) 
+- Dreams Incorporated Stock Data (1/21 - 10/25)
+- Dreams Incorporated produces home goods and accessories, but is most popular for their blind box figurines (Smiskis, Sonny Angels, etc.)
 
 `EsteeLauderStock.csv  ` 
-- add explanation  
+- Estée Lauder Stock Data (11/17/95 - 11/12/25)
+- Estée Lauder is a high performance skincare, makeup, and fragrance brand.
 
 `PopMartStock.csv ` 
-- add explanation  
+- Pop Mart Stock Data (1/1/21 - 10/1/25)
+- Pop Mart sells small, collectible toys and figurines. In particular, they are most well known for the 
+sale of a product called Labubus.
 
 `PVHStock.csv `  
-- add explanation  
+- Phillips-Van Heusen Corporation Stock Data (1/1/21 - 11/1/25)
+- PVH owns high-end brands such as Tommy Hilfiger abd Calvin Klein
 
 `StarbucksStock.csv`   
-- add explanation  
+- Starbucks Stock Data (1/1/21 - 10/1/25)
+- Starbucks operates the largest coffeehouse chain in the world. They sell a variety of teas, coffees, baked goods, and more.
 
 `TargetStock.csv `  
-- add explanation  
+- Target Stock Data (2/1/21 - 11/1/25)
+- Target is a general merchandise retailer that sells both groceries and household goods
 
 `TJXStock.csv `  
-- add explanation  
+- TJX Companies, Inc. Stock Data (1/1/21 - 11/1/25)
+- TJX owns off price apparel and home fashions retailer stores such as T.J. Maxx, Marshalls, and HomeGoods
 
 `UltaStock.csv ` 
-- add explanation  
+- Ulta Stock Data (10/1/25 - 11/1/25)
+- Ulta is a beauty retailer for cosmetics, fragrance, skin care, and hair care products.
 
 `WalmartStock.csv `  
-- add explanation  
+- Walmart Stock Data (1/1/21 - 11/1/25)
+- Walmart is a retail corporation that sells a variety of goods. It is similar to target but generally less expensive.
 
 ## Figures
 `fig1_allStockPrice.py ` 

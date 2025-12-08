@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from data_cleaning import ld_cln_data
 
 def plot_fig1():
-    stock_data = ld_cln_data()
+    stock_data = ld_cln_data() # load in cleaned stock data
 
     df_dollar = stock_data["dollar"]
     df_dreams = stock_data["dreams"]
@@ -15,6 +15,7 @@ def plot_fig1():
     df_ulta = stock_data["ulta"]
     df_walmart = stock_data["walmart"]
 
+    # creat grid so plot the 10 stock data graphs
     fig, axes = plt.subplots(5, 2, figsize=(14, 18))
     fig.suptitle("Stock Price History (2021–2025)", fontsize=20)
 
@@ -24,7 +25,7 @@ def plot_fig1():
     # Plot Dreams
     axes[0, 1].plot(df_dreams['Date'], df_dreams['Price'], color="purple")
     axes[0, 1].set_title("Dreams Incorporated")
-    # Plot Estee
+    # Plot Estee (using 1997 - 2001 since this was when the Lipstick Trend was first noticed)
     axes[1, 0].plot(df_estee_97_01['Date'], df_estee_97_01['Price'], color="brown")
     axes[1, 0].set_title("Estée Lauder (1997-2001)")
     # Plot PopMart
@@ -54,7 +55,10 @@ def plot_fig1():
         ax.set_xlabel("Date")
         ax.set_ylabel("Price")
 
+    # make sures there is no overlap in plot features
     plt.tight_layout()
+
+    # display
     plt.show()
 
 if __name__ == "__main__":

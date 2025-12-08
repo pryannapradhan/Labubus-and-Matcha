@@ -3,7 +3,7 @@ import pandas as pd
 from data_cleaning import ld_cln_data
 
 def plot_fig7():
-    stock_data = ld_cln_data()
+    stock_data = ld_cln_data() # load cleaned data
 
     df_dreams = stock_data["dreams"]
     df_pop = stock_data["pop"]
@@ -12,10 +12,12 @@ def plot_fig7():
     df_cars = stock_data["cars"]
     df_estee_97_01 = stock_data["estee_97_01"]
 
-    # Sshift estee dates from 1997-2001 to 2021-2025 for plotting purposes
+    # Shift estee dates from 1997-2001 to 2021-2025 for plotting purposes
+    # so estee 1997-2001 data can be graphed with the 2021-2025 data from other stock market data
     df_estee_shifted = df_estee_97_01.copy()
     df_estee_shifted["Date"] = df_estee_shifted["Date"] + pd.DateOffset(years=24)
 
+    # plot all the data on top of each other
     plt.figure(figsize=(14, 7))
 
     plt.plot(df_dreams['Date'], df_dreams['Price'], label='Dreams Inc.', color="purple")
@@ -28,6 +30,7 @@ def plot_fig7():
     plt.plot(df_estee_shifted['Date'], df_estee_shifted['Price'],
              label='Estee Lauder (97–01 shifted)', color="brown", linestyle='dashed')
 
+    # format graph and display
     plt.xlabel("Date")
     plt.ylabel("Price")
     plt.title("Small Luxury (Dreams, PopMart, Ulta, Estee) vs. Car Sales")
@@ -36,7 +39,7 @@ def plot_fig7():
     plt.tight_layout()
     plt.show()
 
-    # plot just estee
+    # plot just estee stock 1997-2001 stock market data for comparison
     plt.figure(figsize=(10, 5))
     plt.plot(df_estee_97_01['Date'], df_estee_97_01['Price'], color="brown")
 

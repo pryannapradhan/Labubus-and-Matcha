@@ -2,24 +2,23 @@ import matplotlib.pyplot as plt
 from data_cleaning import ld_cln_data
 
 def plot_fig8():
-    data = ld_cln_data()
+    data = ld_cln_data() # load cleaned data
 
-    # stock datasets
     df_dreams = data["dreams"]
     df_pop = data["pop"]
     df_starbucks = data["starbucks"]
     df_ulta = data["ulta"]
 
-    # unemployment (filtered in your cleaning function)
+    # unemployment (already filtered to 21-25_)
     df_unemp = data["unemployment_21_25"]
 
     # Create figure
     plt.figure(figsize=(14, 7))
 
-    ax1 = plt.gca()            # Main axis for stock prices
-    ax2 = ax1.twinx()          # Secondary axis for unemployment rate
+    ax1 = plt.gca() # left axis for stock prices
+    ax2 = ax1.twinx()  # right axis for unemployment rate
 
-    # ---- STOCK PRICE LINES ----
+    # graph stock market price data
     ax1.plot(df_dreams['Date'], df_dreams['Price'],
              label="Dreams", color="purple")
     ax1.plot(df_pop['Date'], df_pop['Price'],
@@ -30,17 +29,17 @@ def plot_fig8():
              label="Ulta Beauty", color="orange")
 
     ax1.set_xlabel("Date")
-    ax1.set_ylabel("Stock Price (USD)")
+    ax1.set_ylabel("Stock Price")
 
-    # ---- UNEMPLOYMENT LINE ----
+    # graph unemployment rate data
     ax2.plot(df_unemp['Date'], df_unemp['UnemploymentRate'],
              label="Unemployment Rate", color="black", linewidth=2)
     ax2.set_ylabel("Unemployment Rate (%)")
 
-    # ---- TITLE ----
+    # set title
     plt.title("Small Luxury Spending vs Unemployment Rate (2021–2025)")
 
-    # Combine legends
+    # combine legends
     lines = ax1.get_lines() + ax2.get_lines()
     labels = [line.get_label() for line in lines]
     ax1.legend(lines, labels, loc="upper right")

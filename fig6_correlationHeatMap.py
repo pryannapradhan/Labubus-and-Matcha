@@ -5,9 +5,9 @@ from data_cleaning import ld_cln_data
 
 def plot_correlation_heatmap():
 
-    stock_data = ld_cln_data() # Called from data_cleaning.py
+    stock_data = ld_cln_data() # load in cleaned datasets
 
-    # List of datasets to include in correlation
+    # Dictionary of datasets to include in correlation
     economicData = {
         'DollarTree': stock_data['dollar'],
         'Dreams': stock_data['dreams'],
@@ -54,10 +54,12 @@ def plot_correlation_heatmap():
     # Compute correlation matrix
     corr_matrix = combined_df.corr()
 
-    # Plot heatmap
+    # Plot heatmap using seaborn
     plt.figure(figsize=(14, 12))
     sns.heatmap(corr_matrix, annot=True, fmt=".2f",
                 cmap='coolwarm', linewidths=0.5)
+
+    # format heatmap and display
     plt.title("Correlation Matrix HeatMap for Stock History and Economic Indicators",
               fontsize=18)
     plt.xticks(rotation=45)

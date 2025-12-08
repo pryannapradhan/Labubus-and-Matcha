@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from data_cleaning import ld_cln_data
 
 def plot_fig3():
-    stock_data = ld_cln_data()
+    stock_data = ld_cln_data() # load in stock data for Item Comparison
 
     df_dreams = stock_data["dreams"]
     df_pop = stock_data["pop"]
@@ -21,6 +21,7 @@ def plot_fig3():
     plt.plot(df_cars['Date'], df_cars['Price'], label='Car Sales', color = "black")
     plt.plot(df_estee_21_25['Date'], df_estee_21_25['Price'], label='Estee Lauder (2021–2025)', color = "brown")
 
+    # format graph
     plt.xlabel("Date")
     plt.ylabel("Price")
     plt.title("All Companies: Stock Price Overlay")
