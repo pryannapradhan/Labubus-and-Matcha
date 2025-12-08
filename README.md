@@ -19,11 +19,20 @@ Labubus-and-Matcha/
 │   └── UnemploymentData.csv  
 │  
 ├── StockHistoryData/  
-│   ├── DollarTreeStock.csv  
-│   ├── DollarTreeStock_cleaned.csv 
-│   ├── DreamsIncorporatedStock.csv  
-│   ├── DreamsIncorporatedStock_cleaned.csv
-│   └── ... (other stocks)  
+│   ├── CompanyComparison/  
+│   │   ├── DollarTreeStock.csv  
+│   │   ├── DollarTreeStock_cleaned.csv  
+│   │   ├── PVHStock.csv  
+│   │   ├── PVHStock_cleaned.csv  
+│   │   └── ... (other company overall stock market data)
+│   │  
+│   └── ItemComparison/  
+│       │ ├── DreamsIncorporatedStock.csv  
+│       │ ├── DreamsIncorporatedStock_cleaned.  
+│       │ ├── EsteeLauderStock.csv  
+│       │ ├── EsteeLauderStock_cleaned.csv  
+│       │ └──... (other company item focused stock market data) 
+│      
 │  
 ├── data_cleaning.py  
 ├── fig1_allStockPrice.py  
@@ -99,34 +108,38 @@ sale of a product called Labubus.
 
 ## Figures
 `fig1_allStockPrice.py ` 
-- add explanation  
+- 5 x 2 grid graph of the stock prices for all 10 sets of stock market graph
 
 `fig2_estee.py`  
-- add explanation  
+- 3 graphs of Estee Lauder stock market data on one plot. (1) 1997-2001,
+  (2) 2021-2025, (3) Full History 1995-2025
 
 `fig3_overlay.py`  
-- add explanation  
+- 1 graph of all possible lipstick indicator stock market history data against the
+economic indicator of unemployment rate
 
 `fig4_dream_pop.py ` 
-- add explanation  
+- Dreams Inc. and Popmart stock market data plotted on a dual axis
 
 `fig5_individual.py ` 
-- add explanation  
+- All datasets (both stock market history and economic indicator data) plotted on their 
+own individual graph
 
 `fig6_correlationHeatMap.py`  
-- add explanation  
+- Heatmap of the correlations between the different datasets
 
 `fig7_smallLuxuryBigPurchase.py ` 
-- add explanation  
+- 2 graphs. The first one is an overlay of purchases of small luxury items (makeup, starbucks, etc.) and
+the bigger purchase of a car. The second graph is just the Estée Lauder data 1997-2001.
 
 `fig8_smallLuxuryEconomicIndicators.py ` 
-- add explanation  
+- 1 graph of small luxury spending data (e.g. stock market history from popmart) v. unemployment rate.
 
 `fig9_BudgetLuxury.py  `
-- add explanation  
+- 1 graph of company comparison (cheaper companies v. luxury companies)
 
 `fig10_allStockPercentChange.py`
-- add explanation  
+- 5 x 2 grid of the percent change in stock market for the companies in figure 1.
 
 
 

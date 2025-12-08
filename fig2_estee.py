@@ -6,15 +6,15 @@ def plot_fig2():
 
     df_estee = stock_data["estee"]
     df_estee_21_25 = stock_data["estee_21_25"]
-    df_estee_95_03 = stock_data["estee_95_03"]
+    df_estee_97_01 = stock_data["estee_97_01"]
 
     # create grid for plots
     fig = plt.figure(figsize=(14, 10))
 
     # plot estee 95-03 top left
     ax1 = plt.subplot2grid((2, 2), (0, 0))
-    ax1.plot(df_estee_95_03['Date'], df_estee_95_03['Price'])
-    ax1.set_title('Estee Lauder (1995–2003)')
+    ax1.plot(df_estee_97_01['Date'], df_estee_97_01['Price'])
+    ax1.set_title('Estee Lauder (1997–2001)')
 
     # plot estee 21-25 top right
     ax2 = plt.subplot2grid((2, 2), (0, 1))

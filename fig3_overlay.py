@@ -18,7 +18,7 @@ def plot_fig3():
     plt.plot(df_pop['Date'], df_pop['Price'], label='PopMart', color = "red")
     plt.plot(df_starbucks['Date'], df_starbucks['Price'], label='Starbucks', color = "green")
     plt.plot(df_ulta['Date'], df_ulta['Price'], label='Ulta Beauty', color = "orange")
-    plt.plot(df_cars['Date'], df_cars['Price'], label='Car Sales', color = "black")
+    plt.plot(df_cars['Date'], df_cars['TotalSales'], label='Car Sales', color="black")
     plt.plot(df_estee_21_25['Date'], df_estee_21_25['Price'], label='Estee Lauder (2021–2025)', color = "brown")
 
     # format graph
